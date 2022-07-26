@@ -1,4 +1,4 @@
-# Modern Layouts - 32/50 (#Made-In-CSS-Grid)
+# Modern Layouts - 33/50 (#Made-In-CSS-Grid)
 
 ![Screenshot](/assets/screenshot/layout-33-screenshot.png)
 
