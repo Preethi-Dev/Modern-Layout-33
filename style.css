@@ -1,5 +1,177 @@
 /* Resets */
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a {
+  text-decoration: none;
+}
+
 /* Fonts */
+@font-face {
+  font-family: "Derivia";
+  src: url(./assets/fonts/Derivia-Regular.otf);
+}
+
 /* Variables */
+:root {
+  --primary: #111111;
+  --bg: linear-gradient(68.41deg, #b1fad8 0.92%, #f6a8d0 100%);
+}
+
 /* Base Styles */
+body {
+  background: var(--bg);
+  min-height: 100vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--primary);
+}
+
+a {
+  color: var(--primary);
+}
+
+.title h1,
+.content p {
+  font-family: "Derivia";
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.social_media_links,
+.location {
+  display: flex;
+  flex-direction: column;
+  grid-row-gap: 1.125rem;
+}
+
+.social_media_links a,
+.location p {
+  font-family: "Derivia";
+  font-style: normal;
+  font-weight: 400;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 1.125rem;
+  line-height: 22px;
+}
+
+.contents {
+  display: grid;
+  grid-row-gap: 1.25rem;
+}
+
+.content {
+  display: flex;
+  justify-content: space-between;
+}
+
+.content p:nth-child(1) {
+  text-align: left;
+}
+
+.content.content-3 {
+  justify-content: center;
+}
+
 /* Mobile Styles */
+.container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto 1fr 1fr auto;
+  align-items: center;
+  grid-row-gap: 1.25rem;
+
+  padding: 2.5rem;
+  min-height: 100vh;
+}
+
+.container > * {
+  grid-column: 1 / -1;
+}
+
+.title {
+  justify-self: center;
+}
+
+.title h1 {
+  font-size: 3rem;
+}
+
+.content p {
+  font-size: 2rem;
+}
+
+/* Small Tablet Styles */
+@media screen and (min-width: 500px) {
+  .container {
+    grid-template-rows: auto 1fr auto;
+  }
+
+  .container > .social_media_links,
+  .location {
+    grid-column: span 2;
+  }
+
+  .title h1 {
+    font-size: 3.375rem;
+  }
+}
+
+/* Large Tablet Styles */
+@media screen and (min-width: 600px) {
+  .container > .social_media_links,
+  .location {
+    align-self: start;
+  }
+
+  .title h1 {
+    font-size: 5.375rem;
+  }
+}
+
+/* Laptop Styles */
+@media screen and (min-width: 960px) {
+  .title h1 {
+    font-size: 6.375rem;
+  }
+
+  .content p {
+    font-size: 3rem;
+  }
+}
+
+/* Desktop Styles */
+@media screen and (min-width: 1200px) {
+  .container {
+    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: auto 400px auto;
+
+    max-width: 1600px;
+    margin: 0 auto;
+  }
+
+  .container > .social_media_links {
+    grid-column-end: -5;
+  }
+
+  .container > .social_media_links,
+  .location {
+    justify-self: start;
+  }
+
+  .title h1 {
+    font-size: 8.375rem;
+  }
+
+  .content p {
+    font-size: 4rem;
+  }
+}
